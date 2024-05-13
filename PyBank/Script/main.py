@@ -45,22 +45,32 @@ min_month = months [diffs.index(min_diff) + 1]
 
 ##output to screen terminal
 print("Financial Analysis\n\n"
-    +"----------------------------\n\n"
-    +f"Total Months: {len(months)}\n\n"
-    +f"Total: ${tot_profs}\n\n"
-    +f"Average Change: ${avg_chg}\n\n"
-    +f"Greatest Increase in Profits: {max_month} (${max_diff})\n\n"
-    +f"Greatest Decrease in Profits: {min_month} (${min_diff})")
+      +"----------------------------\n\n"
+      +f"Total Months: {len(months)}\n\n"
+      +f"Total: ${tot_profs}\n\n"
+      +f"Average Change: ${avg_chg}\n\n"
+      +f"Greatest Increase in Profits: {max_month} (${max_diff})\n\n"
+      +f"Greatest Decrease in Profits: {min_month} (${min_diff})")
 
 
-##Save above output to FinReview.txt file, code guidance obtained from  https://stackoverflow.com/questions/36571560/directing-print-output-to-a-txt-file
+##output to file
+##check for output directory and create if does not exist
+mkdir_path = os.path.join("..","analysis")
 
-with open('FinReview.txt', 'a') as f:
-    print("Financial Analysis\n\n"
-        +"----------------------------\n\n"
-        +f"Total Months: {len(months)}\n\n"
-        +f"Total: ${tot_profs}\n\n"
-        +f"Average Change: ${avg_chg}\n\n"
-        +f"Greatest Increase in Profits: {max_month} (${max_diff})\n\n"
-        +f"Greatest Decrease in Profits: {min_month} (${min_diff})", file=f)
-    
+if not os.path.exists(mkdir_path):
+    os.mkdir(mkdir_path)
+
+## specify the file to write to 
+output_path = os.path.join("..","analysis","FinReview.txt")
+
+## open file using "write" mode. specify the variable to hold the contents
+with open(output_path, 'w') as writer:
+
+    writer.writelines(["Financial Analysis\n\n"
+                       +"----------------------------\n\n"
+                       +f"Total Months: {len(months)}\n\n"
+                       +f"Total: ${tot_profs}\n\n"
+                       +f"Average Change: ${avg_chg}\n\n"
+                       +f"Greatest Increase in Profits: {max_month} (${max_diff})\n\n"
+                       +f"Greatest Decrease in Profits: {min_month} (${min_diff})"])
+
