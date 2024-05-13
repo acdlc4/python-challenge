@@ -3,19 +3,20 @@ import csv
 
 ##Path to collect data form the Resources folder
 BudgetData_csv = os.path.join("..","Resources","budget_data.csv")
-print(BudgetData_csv)
 
 ##Open and read csv
 with open(BudgetData_csv) as budget_file:
     budget_reader = csv.reader(budget_file, delimiter=",")
-
+##read and store header row
+    budget_header = next(budget_reader)
+##set data as list    
     budget_list = list(budget_reader)
 
 ##create list of all months, no header
-months = [data[0] for data in budget_list][1:]
+months = [data[0] for data in budget_list][0:]
 
 ##create list of all profits, no header
-pre_profits = [data[1] for data in budget_list][1:]
+pre_profits = [data[1] for data in budget_list][0:]
 profits = [eval(i) for i in pre_profits]
 
 ##define the calculation of the summation of all profits
