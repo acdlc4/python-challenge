@@ -9,6 +9,8 @@ The code created for the PyBank / financial analysis project provides a summary 
   - Month with the greatest increase in profits from the prior month and the amount change and
   - Month with the greatest decrease in profits from the prior month and the amount change
 
+Script location: https://github.com/acdlc4/python-challenge/blob/main/PyBank/Script/main.py
+Output location: https://github.com/acdlc4/python-challenge/blob/main/PyBank/analysis/FinReview.txt
 Limitations: Requires at least two subsequent months of data for the minimum amount of analysis and the script to operate successfully.
 
 # PyPoll
@@ -19,6 +21,8 @@ The code created for the PyPoll / ballot analysis project provides a summary of 
       - Votes received
   - Overall winner
 
+Script location: https://github.com/acdlc4/python-challenge/blob/main/PyPoll/Script/main.py
+Output location: https://github.com/acdlc4/python-challenge/blob/main/PyPoll/analysis/ElectionResults.txt
 Limitations: Requires at least one ballot for the script to operate successfully.
 
 
