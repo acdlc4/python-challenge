@@ -93,3 +93,5 @@ with open(output_path, 'w') as writer:
     writer.writelines(["-------------------------\n\n"
                        +f"Winner: {winner[0]}\n\n"
                        +"-------------------------\n\n"])
+    
+    ##end
