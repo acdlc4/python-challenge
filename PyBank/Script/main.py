@@ -17,7 +17,7 @@ months = [data[0] for data in budget_list][0:]
 
 ##create list of all profits, no header
 pre_profits = [data[1] for data in budget_list][0:]
-profits = [eval(i) for i in pre_profits]
+profits = [eval(i) for i in pre_profits] ##convert data from strings into numbers
 
 ##define the calculation of the summation of all profits
 tot_profs = 0

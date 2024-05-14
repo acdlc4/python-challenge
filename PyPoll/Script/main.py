@@ -39,7 +39,7 @@ while i < len(cand_summ):
 ##calculate winning percentage by candidate
 percent_by_cand = []
 i = 0
-while i < 3:
+while i < len(cand_summ):
     percentage = round(votes_by_cand[i] / total_votes *100, 3)
     percent_by_cand.append(percentage)
     i += 1
@@ -59,7 +59,7 @@ print("Election Results\n\n"
     +"-------------------------\n")
 
 i = 0
-while i < 3:
+while i < len(cand_summ):
     print(f"{cand_summ[i]}: "
           +f'{percent_by_cand[i]}% ({votes_by_cand[i]})\n')
     i +=1
@@ -85,7 +85,7 @@ with open(output_path, 'w') as writer:
                        +"-------------------------\n\n"])
 
     i = 0
-    while i < 3:
+    while i < len(cand_summ):
         writer.writelines([f"{cand_summ[i]}: "
                            +f'{percent_by_cand[i]}% ({votes_by_cand[i]})\n\n'])
         i +=1
